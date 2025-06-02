@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Varietesalaire" optimistic-lock="none" schema="public" table="varietesalaire">
+        <id name="idvarietesalaire" type="int">
+            <column name="idvarietesalaire"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="libellevariete" type="string">
+            <column length="254" name="libellevariete"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="salaires" table="salaire">
+            <key>
+                <column name="idvarietesalaire" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Salaire"/>
+        </set>
+    </class>
+</hibernate-mapping>

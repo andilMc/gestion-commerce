@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Unitemesure" optimistic-lock="none" schema="public" table="unitemesure">
+        <id name="idunite" type="int">
+            <column name="idunite"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="libelle" type="string">
+            <column length="254" name="libelle"/>
+        </property>
+        <property name="symbole" type="string">
+            <column length="254" name="symbole"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="assoproduitunites" table="assoproduitunite">
+            <key>
+                <column name="idunite" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Assoproduitunite"/>
+        </set>
+    </class>
+</hibernate-mapping>

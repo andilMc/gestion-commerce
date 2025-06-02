@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="article"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="assocomptecaisse"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="assoproduitunite"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="assoreporttransat"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="boutique"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="caisse"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="casquette"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="catalogue"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="categorietransaction"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="client"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="collaborateur"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="compte"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="conge"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="contrattravail"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="detailvente"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="detaiproduit"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="employer"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="facture"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="famille"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="historique"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="image"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="livraison"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="lot"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="modepayement"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="motifretour"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="paiement"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="patterne"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="payementsalaire"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="penalite"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="permission"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="personne"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="poste"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="produit"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="profile"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="promotion"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="rapportfinancier"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="retourproduit"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="role"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="salaire"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="societe"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="stock"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="transaction"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="typecontrat"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="typevariete"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="unitemesure"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="variete"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="varietesalaire"/>
+  <table-filter match-catalog="gestion_commerce" match-schema="public" match-name="vente"/>
+</hibernate-reverse-engineering>

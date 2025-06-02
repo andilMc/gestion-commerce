@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Permission" optimistic-lock="none" schema="public" table="permission">
+        <id name="idpermission" type="int">
+            <column name="idpermission"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="libelle" type="string">
+            <column length="254" name="libelle"/>
+        </property>
+        <property name="reference" type="string">
+            <column length="254" name="reference"/>
+        </property>
+        <property name="etat" type="java.lang.Boolean">
+            <column name="etat"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+        <property name="description" type="string">
+            <column length="254" name="description"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="roles" table="role">
+            <key>
+                <column name="idpermission" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Role"/>
+        </set>
+    </class>
+</hibernate-mapping>

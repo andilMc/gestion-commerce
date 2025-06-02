@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Contrattravail" optimistic-lock="none" schema="public" table="contrattravail">
+        <id name="idcontrat" type="int">
+            <column name="idcontrat"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Employer" fetch="select" name="employer">
+            <column name="idpersonne" not-null="true"/>
+            <column name="idemployer" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Payementsalaire" fetch="select" name="payementsalaire">
+            <column name="idpaye" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Salaire" fetch="select" name="salaire">
+            <column name="idsalaire" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Typecontrat" fetch="select" name="typecontrat">
+            <column name="idtypecontract" not-null="true"/>
+        </many-to-one>
+        <property name="datedebut" type="date">
+            <column length="13" name="datedebut"/>
+        </property>
+        <property name="datefin" type="date">
+            <column length="13" name="datefin"/>
+        </property>
+        <property name="statutcontrat" type="string">
+            <column length="254" name="statutcontrat"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Caisse" optimistic-lock="none" schema="public" table="caisse">
+        <id name="idcaisse" type="int">
+            <column name="idcaisse"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dateouverture" type="date">
+            <column length="13" name="dateouverture"/>
+        </property>
+        <property name="datefermeture" type="date">
+            <column length="13" name="datefermeture"/>
+        </property>
+        <property name="statut" type="string">
+            <column length="254" name="statut"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="assocomptecaisses" table="assocomptecaisse">
+            <key>
+                <column name="idcaisse" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Assocomptecaisse"/>
+        </set>
+    </class>
+</hibernate-mapping>

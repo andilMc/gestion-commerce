@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Assoproduitunite" optimistic-lock="none" schema="public" table="assoproduitunite">
+        <composite-id class="models.classes.AssoproduituniteId" name="id">
+            <key-property name="idunite" type="int">
+                <column name="idunite"/>
+            </key-property>
+            <key-property name="idproduit" type="int">
+                <column name="idproduit"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="models.classes.Produit" fetch="select" insert="false" name="produit" update="false">
+            <column name="idproduit" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Unitemesure" fetch="select" insert="false" name="unitemesure" update="false">
+            <column name="idunite" not-null="true"/>
+        </many-to-one>
+        <property name="date" type="date">
+            <column length="13" name="date"/>
+        </property>
+    </class>
+</hibernate-mapping>

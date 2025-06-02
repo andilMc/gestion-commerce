@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Lot" optimistic-lock="none" schema="public" table="lot">
+        <id name="idlot" type="int">
+            <column name="idlot"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Boutique" fetch="select" name="boutique">
+            <column name="idboutique"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Produit" fetch="select" name="produit">
+            <column name="idproduit" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Stock" fetch="select" name="stock">
+            <column name="idstock" not-null="true"/>
+        </many-to-one>
+        <property name="reference" type="java.lang.Integer">
+            <column name="reference"/>
+        </property>
+        <property name="libelle" type="string">
+            <column length="254" name="libelle"/>
+        </property>
+        <property name="decription" type="string">
+            <column length="254" name="decription"/>
+        </property>
+        <property name="statut" type="java.lang.Integer">
+            <column name="statut"/>
+        </property>
+        <property name="datemodification" type="java.lang.Integer">
+            <column name="datemodification"/>
+        </property>
+        <property name="datecreation" type="java.lang.Integer">
+            <column name="datecreation"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="articles" table="article">
+            <key>
+                <column name="idlot" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Article"/>
+        </set>
+    </class>
+</hibernate-mapping>

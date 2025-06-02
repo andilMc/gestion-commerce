@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Assocomptecaisse" optimistic-lock="none" schema="public" table="assocomptecaisse">
+        <composite-id class="models.classes.AssocomptecaisseId" name="id">
+            <key-property name="idconnexion" type="int">
+                <column name="idconnexion"/>
+            </key-property>
+            <key-property name="idcaisse" type="int">
+                <column name="idcaisse"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="models.classes.Caisse" fetch="select" insert="false" name="caisse" update="false">
+            <column name="idcaisse" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Compte" fetch="select" insert="false" name="compte" update="false">
+            <column name="idconnexion" not-null="true"/>
+        </many-to-one>
+        <property name="heurdebut" type="string">
+            <column length="254" name="heurdebut"/>
+        </property>
+        <property name="heurfin" type="string">
+            <column length="254" name="heurfin"/>
+        </property>
+        <property name="montantinitial" type="java.lang.Byte">
+            <column name="montantinitial" precision="0" scale="0"/>
+        </property>
+        <property name="montantfinal" type="java.lang.Byte">
+            <column name="montantfinal" precision="0" scale="0"/>
+        </property>
+        <property name="date" type="date">
+            <column length="13" name="date"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="ventes" table="vente">
+            <key>
+                <column name="idconnexion" not-null="true"/>
+                <column name="idcaisse" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Vente"/>
+        </set>
+    </class>
+</hibernate-mapping>

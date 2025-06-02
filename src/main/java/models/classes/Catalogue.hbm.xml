@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Catalogue" optimistic-lock="none" schema="public" table="catalogue">
+        <id name="idcatalogue" type="int">
+            <column name="idcatalogue"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="reference" type="string">
+            <column length="254" name="reference"/>
+        </property>
+        <property name="label" type="string">
+            <column length="254" name="label"/>
+        </property>
+        <property name="description" type="string">
+            <column length="254" name="description"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+        <property name="etat" type="java.lang.Boolean">
+            <column name="etat"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="familles" table="famille">
+            <key>
+                <column name="idcatalogue"/>
+            </key>
+            <one-to-many class="models.classes.Famille"/>
+        </set>
+    </class>
+</hibernate-mapping>

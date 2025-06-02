@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Compte" optimistic-lock="none" schema="public" table="compte">
+        <id name="idconnexion" type="int">
+            <column name="idconnexion"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Personne" fetch="select" name="personne">
+            <column name="idpersonne" not-null="true"/>
+        </many-to-one>
+        <property name="identifiant" type="string">
+            <column length="254" name="identifiant"/>
+        </property>
+        <property name="motdepasse" type="string">
+            <column length="254" name="motdepasse"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+        <property name="etat" type="string">
+            <column length="254" name="etat"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="assocomptecaisses" table="assocomptecaisse">
+            <key>
+                <column name="idconnexion" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Assocomptecaisse"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="historiques" table="historique">
+            <key>
+                <column name="idconnexion"/>
+            </key>
+            <one-to-many class="models.classes.Historique"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="patternes" table="patterne">
+            <key>
+                <column name="idconnexion" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Patterne"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="rapportfinanciers" table="rapportfinancier">
+            <key>
+                <column name="idconnexion"/>
+            </key>
+            <one-to-many class="models.classes.Rapportfinancier"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="transactions" table="transaction">
+            <key>
+                <column name="idconnexion" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Transaction"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="boutiques" table="boutique">
+            <key>
+                <column name="idconnexion"/>
+            </key>
+            <one-to-many class="models.classes.Boutique"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="roles" table="role">
+            <key>
+                <column name="idconnexion" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Role"/>
+        </set>
+    </class>
+</hibernate-mapping>

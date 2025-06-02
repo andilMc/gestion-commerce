@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Role" optimistic-lock="none" schema="public" table="role">
+        <composite-id class="models.classes.RoleId" name="id">
+            <key-property name="idconnexion" type="int">
+                <column name="idconnexion"/>
+            </key-property>
+            <key-property name="idpermission" type="int">
+                <column name="idpermission"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="models.classes.Compte" fetch="select" insert="false" name="compte" update="false">
+            <column name="idconnexion" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Permission" fetch="select" insert="false" name="permission" update="false">
+            <column name="idpermission" not-null="true"/>
+        </many-to-one>
+        <property name="datecreation" type="string">
+            <column length="254" name="datecreation"/>
+        </property>
+        <property name="etat" type="java.lang.Boolean">
+            <column name="etat"/>
+        </property>
+    </class>
+</hibernate-mapping>

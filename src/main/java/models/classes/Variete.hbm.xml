@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Variete" optimistic-lock="none" schema="public" table="variete">
+        <composite-id class="models.classes.VarieteId" name="id">
+            <key-property name="idarticle" type="int">
+                <column name="idarticle"/>
+            </key-property>
+            <key-property name="idtypevariete" type="int">
+                <column name="idtypevariete"/>
+            </key-property>
+            <key-property name="idvariete" type="int">
+                <column name="idvariete"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="models.classes.Article" fetch="select" insert="false" name="article" update="false">
+            <column name="idarticle" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Typevariete" fetch="select" insert="false" name="typevariete" update="false">
+            <column name="idtypevariete" not-null="true"/>
+        </many-to-one>
+        <property name="valeur" type="string">
+            <column length="254" name="valeur"/>
+        </property>
+        <property name="etat" type="java.lang.Boolean">
+            <column name="etat"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+    </class>
+</hibernate-mapping>

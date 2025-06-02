@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Stock" optimistic-lock="none" schema="public" table="stock">
+        <id name="idstock" type="int">
+            <column name="idstock"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="designation" type="string">
+            <column length="254" name="designation"/>
+        </property>
+        <property name="qrcode" type="string">
+            <column length="254" name="qrcode"/>
+        </property>
+        <property name="datecreation" type="date">
+            <column length="13" name="datecreation"/>
+        </property>
+        <property name="etat" type="java.lang.Boolean">
+            <column name="etat"/>
+        </property>
+        <property name="datemodification" type="java.lang.Integer">
+            <column name="datemodification"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="lots" table="lot">
+            <key>
+                <column name="idstock" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Lot"/>
+        </set>
+    </class>
+</hibernate-mapping>

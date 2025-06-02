@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Transaction" optimistic-lock="none" schema="public" table="transaction">
+        <id name="idtransaction" type="int">
+            <column name="idtransaction"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Categorietransaction" fetch="select" name="categorietransaction">
+            <column name="idcattrans"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Compte" fetch="select" name="compte">
+            <column name="idconnexion" not-null="true"/>
+        </many-to-one>
+        <property name="type" type="string">
+            <column length="254" name="type"/>
+        </property>
+        <property name="montant" type="java.lang.Byte">
+            <column name="montant" precision="0" scale="0"/>
+        </property>
+        <property name="description" type="string">
+            <column length="254" name="description"/>
+        </property>
+        <property name="categorie" type="string">
+            <column length="254" name="categorie"/>
+        </property>
+        <property name="date" type="date">
+            <column length="13" name="date"/>
+        </property>
+        <property name="validee" type="java.lang.Boolean">
+            <column name="validee"/>
+        </property>
+        <property name="source" type="string">
+            <column length="254" name="source"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="assoreporttransats" table="assoreporttransat">
+            <key>
+                <column name="idtransaction" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Assoreporttransat"/>
+        </set>
+    </class>
+</hibernate-mapping>

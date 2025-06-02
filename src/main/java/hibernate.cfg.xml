@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/gestion_commerce</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <property name="hibernate.search.autoregister_listeners">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping resource="models/classes/Promotion.hbm.xml"/>
+        <mapping resource="models/classes/Poste.hbm.xml"/>
+        <mapping resource="models/classes/Typecontrat.hbm.xml"/>
+        <mapping resource="models/classes/Contrattravail.hbm.xml"/>
+        <mapping resource="models/classes/Penalite.hbm.xml"/>
+        <mapping resource="models/classes/Categorietransaction.hbm.xml"/>
+        <mapping resource="models/classes/Vente.hbm.xml"/>
+        <mapping resource="models/classes/Paiement.hbm.xml"/>
+        <mapping resource="models/classes/Detailvente.hbm.xml"/>
+        <mapping resource="models/classes/Assoreporttransat.hbm.xml"/>
+        <mapping resource="models/classes/Conge.hbm.xml"/>
+        <mapping resource="models/classes/Assocomptecaisse.hbm.xml"/>
+        <mapping resource="models/classes/Article.hbm.xml"/>
+        <mapping resource="models/classes/Societe.hbm.xml"/>
+        <mapping resource="models/classes/Image.hbm.xml"/>
+        <mapping resource="models/classes/Salaire.hbm.xml"/>
+        <mapping resource="models/classes/Historique.hbm.xml"/>
+        <mapping resource="models/classes/Unitemesure.hbm.xml"/>
+        <mapping resource="models/classes/Catalogue.hbm.xml"/>
+        <mapping resource="models/classes/Motifretour.hbm.xml"/>
+        <mapping resource="models/classes/Payementsalaire.hbm.xml"/>
+        <mapping resource="models/classes/Boutique.hbm.xml"/>
+        <mapping resource="models/classes/Personne.hbm.xml"/>
+        <mapping resource="models/classes/Transaction.hbm.xml"/>
+        <mapping resource="models/classes/Typevariete.hbm.xml"/>
+        <mapping resource="models/classes/Livraison.hbm.xml"/>
+        <mapping resource="models/classes/Stock.hbm.xml"/>
+        <mapping resource="models/classes/Modepayement.hbm.xml"/>
+        <mapping resource="models/classes/Variete.hbm.xml"/>
+        <mapping resource="models/classes/Compte.hbm.xml"/>
+        <mapping resource="models/classes/Permission.hbm.xml"/>
+        <mapping resource="models/classes/Detaiproduit.hbm.xml"/>
+        <mapping resource="models/classes/Produit.hbm.xml"/>
+        <mapping resource="models/classes/Retourproduit.hbm.xml"/>
+        <mapping resource="models/classes/Varietesalaire.hbm.xml"/>
+        <mapping resource="models/classes/Casquette.hbm.xml"/>
+        <mapping resource="models/classes/Client.hbm.xml"/>
+        <mapping resource="models/classes/Profile.hbm.xml"/>
+        <mapping resource="models/classes/Rapportfinancier.hbm.xml"/>
+        <mapping resource="models/classes/Patterne.hbm.xml"/>
+        <mapping resource="models/classes/Famille.hbm.xml"/>
+        <mapping resource="models/classes/Employer.hbm.xml"/>
+        <mapping resource="models/classes/Assoproduitunite.hbm.xml"/>
+        <mapping resource="models/classes/Caisse.hbm.xml"/>
+        <mapping resource="models/classes/Role.hbm.xml"/>
+        <mapping resource="models/classes/Collaborateur.hbm.xml"/>
+        <mapping resource="models/classes/Facture.hbm.xml"/>
+        <mapping resource="models/classes/Lot.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

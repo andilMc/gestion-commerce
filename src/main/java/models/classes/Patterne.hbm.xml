@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Patterne" optimistic-lock="none" schema="public" table="patterne">
+        <id name="idpatterne" type="int">
+            <column name="idpatterne"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Compte" fetch="select" name="compte">
+            <column name="idconnexion" not-null="true"/>
+        </many-to-one>
+        <property name="prefixe" type="string">
+            <column length="254" name="prefixe"/>
+        </property>
+        <property name="suffixe" type="string">
+            <column length="254" name="suffixe"/>
+        </property>
+        <property name="class_" type="string">
+            <column length="254" name="class"/>
+        </property>
+        <property name="colonne" type="string">
+            <column length="254" name="colonne"/>
+        </property>
+    </class>
+</hibernate-mapping>

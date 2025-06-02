@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Facture" optimistic-lock="none" schema="public" table="facture">
+        <id name="idfacture" type="int">
+            <column name="idfacture"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Vente" fetch="select" name="vente">
+            <column name="idvente" not-null="true"/>
+        </many-to-one>
+        <property name="reference" type="string">
+            <column length="254" name="reference"/>
+        </property>
+        <property name="datefacture" type="date">
+            <column length="13" name="datefacture"/>
+        </property>
+        <property name="montant" type="java.lang.Byte">
+            <column name="montant" precision="0" scale="0"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="paiements" table="paiement">
+            <key>
+                <column name="idfacture" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Paiement"/>
+        </set>
+    </class>
+</hibernate-mapping>

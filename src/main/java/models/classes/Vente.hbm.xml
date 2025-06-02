@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="gestion_commerce" name="models.classes.Vente" optimistic-lock="none" schema="public" table="vente">
+        <id name="idvente" type="int">
+            <column name="idvente"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="models.classes.Assocomptecaisse" fetch="select" name="assocomptecaisse">
+            <column name="idconnexion" not-null="true"/>
+            <column name="idcaisse" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="models.classes.Client" fetch="select" name="client">
+            <column name="idpersonne" not-null="true"/>
+            <column name="idclient" not-null="true"/>
+        </many-to-one>
+        <property name="reference" type="java.lang.Integer">
+            <column name="reference"/>
+        </property>
+        <property name="datecommande" type="date">
+            <column length="13" name="datecommande"/>
+        </property>
+        <property name="montanttotal" type="java.lang.Byte">
+            <column name="montanttotal" precision="0" scale="0"/>
+        </property>
+        <property name="modepaiement" type="string">
+            <column length="254" name="modepaiement"/>
+        </property>
+        <property name="statut" type="string">
+            <column length="254" name="statut"/>
+        </property>
+        <property name="date" type="date">
+            <column length="13" name="date"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="livraisons" table="livraison">
+            <key>
+                <column name="idvente" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Livraison"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="detailventes" table="detailvente">
+            <key>
+                <column name="idvente" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Detailvente"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="factures" table="facture">
+            <key>
+                <column name="idvente" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Facture"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="retourproduits" table="retourproduit">
+            <key>
+                <column name="idvente" not-null="true"/>
+            </key>
+            <one-to-many class="models.classes.Retourproduit"/>
+        </set>
+    </class>
+</hibernate-mapping>
