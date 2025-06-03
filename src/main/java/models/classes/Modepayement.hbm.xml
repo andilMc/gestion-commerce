@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Modepayement" optimistic-lock="none" schema="public" table="modepayement">
         <id name="idmodepayement" type="int">
             <column name="idmodepayement"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="typemode" type="string">
             <column length="254" name="typemode"/>

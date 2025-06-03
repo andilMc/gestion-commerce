@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Rapportfinancier" optimistic-lock="none" schema="public" table="rapportfinancier">
         <id name="idrapport" type="int">
             <column name="idrapport"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="models.classes.Compte" fetch="select" name="compte">
             <column name="idconnexion"/>

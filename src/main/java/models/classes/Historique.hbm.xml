@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Historique" optimistic-lock="none" schema="public" table="historique">
         <id name="idhistorique" type="int">
             <column name="idhistorique"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="models.classes.Compte" fetch="select" name="compte">
             <column name="idconnexion"/>

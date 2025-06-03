@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Detaiproduit" optimistic-lock="none" schema="public" table="detaiproduit">
         <id name="iddetailproduit" type="int">
             <column name="iddetailproduit"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="models.classes.Produit" fetch="select" name="produit">
             <column name="idproduit"/>

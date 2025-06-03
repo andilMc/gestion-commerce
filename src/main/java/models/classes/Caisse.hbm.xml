@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Caisse" optimistic-lock="none" schema="public" table="caisse">
         <id name="idcaisse" type="int">
             <column name="idcaisse"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="dateouverture" type="date">
             <column length="13" name="dateouverture"/>

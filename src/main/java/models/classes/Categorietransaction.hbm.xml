@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Categorietransaction" optimistic-lock="none" schema="public" table="categorietransaction">
         <id name="idcattrans" type="int">
             <column name="idcattrans"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="nom" type="string">
             <column length="254" name="nom"/>

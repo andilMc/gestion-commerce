@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Promotion" optimistic-lock="none" schema="public" table="promotion">
         <id name="idpromotion" type="int">
             <column name="idpromotion"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="titrepromotion" type="string">
             <column length="254" name="titrepromotion"/>

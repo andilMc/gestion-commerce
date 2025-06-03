@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Profile" optimistic-lock="none" schema="public" table="profile">
         <id name="idprofile" type="int">
             <column name="idprofile"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="libelle" type="string">
             <column length="254" name="libelle"/>

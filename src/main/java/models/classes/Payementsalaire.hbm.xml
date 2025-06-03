@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Payementsalaire" optimistic-lock="none" schema="public" table="payementsalaire">
         <id name="idpaye" type="int">
             <column name="idpaye"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="montant" type="java.lang.Byte">
             <column name="montant" precision="0" scale="0"/>
