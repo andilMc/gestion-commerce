@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Unitemesure" optimistic-lock="none" schema="public" table="unitemesure">
         <id name="idunite" type="int">
             <column name="idunite"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="libelle" type="string">
             <column length="254" name="libelle"/>

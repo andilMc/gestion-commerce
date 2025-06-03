@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Stock" optimistic-lock="none" schema="public" table="stock">
         <id name="idstock" type="int">
             <column name="idstock"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="designation" type="string">
             <column length="254" name="designation"/>

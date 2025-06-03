@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Catalogue" optimistic-lock="none" schema="public" table="catalogue">
         <id name="idcatalogue" type="int">
             <column name="idcatalogue"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="reference" type="string">
             <column length="254" name="reference"/>

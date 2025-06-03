@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Typecontrat" optimistic-lock="none" schema="public" table="typecontrat">
         <id name="idtypecontract" type="int">
             <column name="idtypecontract"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="libelle" type="string">
             <column length="254" name="libelle"/>

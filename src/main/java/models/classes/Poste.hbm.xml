@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Poste" optimistic-lock="none" schema="public" table="poste">
         <id name="idposte" type="int">
             <column name="idposte"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="titre" type="string">
             <column length="254" name="titre"/>

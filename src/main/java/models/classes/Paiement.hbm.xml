@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Paiement" optimistic-lock="none" schema="public" table="paiement">
         <id name="idpaiement" type="int">
             <column name="idpaiement"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="models.classes.Facture" fetch="select" name="facture">
             <column name="idfacture" not-null="true"/>

@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Typevariete" optimistic-lock="none" schema="public" table="typevariete">
         <id name="idtypevariete" type="int">
             <column name="idtypevariete"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <property name="label" type="string">
             <column length="254" name="label"/>

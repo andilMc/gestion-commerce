@@ -4,7 +4,7 @@
     <class catalog="gestion_commerce" name="models.classes.Motifretour" optimistic-lock="none" schema="public" table="motifretour">
         <id name="idmotif" type="int">
             <column name="idmotif"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="models.classes.Retourproduit" fetch="select" name="retourproduit">
             <column name="idretoure" not-null="true"/>
