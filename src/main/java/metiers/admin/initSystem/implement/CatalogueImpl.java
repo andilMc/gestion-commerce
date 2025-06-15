@@ -1,5 +1,7 @@
 package metiers.admin.initSystem.implement;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -108,25 +110,85 @@ public class CatalogueImpl implements ICatalogue  {
 	@Override
     public List<List<?>> listerCatalogueActif() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueActif'");
+        //throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueActif'");
+		List<Catalogue> actifs = dao.findAllByField("etat", true);
+
+	    // Transformer chaque Catalogue en une List<?> avec certaines colonnes
+		 List<List<?>> result = new ArrayList<>();
+
+		    for (Catalogue catalogue : actifs) {
+		        List<Object> row = new ArrayList<>();
+		        row.add(catalogue.getReference());
+		        row.add(catalogue.getLabel());
+		        row.add(catalogue.getDatecreation());
+		        result.add(row);
+		    }
+
+		    return result;
     }
 
     @Override
     public List<List<?>> listerCatalogueDesactive() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueDesactive'");
+        //throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueDesactive'");
+    	List<Catalogue> actifs = dao.findAllByField("etat", false);
+
+	    // Transformer chaque Catalogue en une List<?> avec certaines colonnes
+		 List<List<?>> result = new ArrayList<>();
+
+		    for (Catalogue catalogue : actifs) {
+		        List<Object> row = new ArrayList<>();
+		        row.add(catalogue.getReference());
+		        row.add(catalogue.getLabel());
+		        row.add(catalogue.getDatecreation());
+		        result.add(row);
+		    }
+
+		    return result;
+
     }
 
     @Override
     public List<List<?>> listerCatalogueParReference(String reference) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueParReference'");
+        //throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueParReference'");
+    	 Catalogue catalogue = dao.findByField("reference", reference);
+
+    	    if (catalogue != null) {
+    	        List<List<?>> result = new ArrayList<>();
+    	        List<Object> row = new ArrayList<>();
+    	        row.add(catalogue.getReference());
+    	        row.add(catalogue.getLabel());
+    	        row.add(catalogue.getDescription());
+    	        row.add(catalogue.getDatecreation());
+    	        row.add(catalogue.getEtat());
+    	        result.add(row);
+    	        return result;
+    	    }
+
+    	    return Collections.emptyList();
+   
     }
 
+    
     @Override
     public List<List<?>> listerCatalogueParLabel(String label) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueParLabel'");
+        //throw new UnsupportedOperationException("Unimplemented method 'listerCatalogueParLabel'");
+    	List<Catalogue> list = dao.findAllByField("label", label);
+        List<List<?>> result = new ArrayList<>();
+
+        for (Catalogue catalogue : list) {
+            List<Object> row = new ArrayList<>();
+            row.add(catalogue.getReference());
+            row.add(catalogue.getLabel());
+            row.add(catalogue.getDescription());
+            row.add(catalogue.getDatecreation());
+            row.add(catalogue.getEtat());
+            result.add(row);
+        }
+
+        return result;
     }
     
 }

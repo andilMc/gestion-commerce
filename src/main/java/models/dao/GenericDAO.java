@@ -84,6 +84,23 @@ public class GenericDAO<T> {
             return null;
         }
     }
+    
+    
+    public List<T> findAllByField(String fieldName, Object value) {
+        try (Session session = Connexion.getSession()) {
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<T> cq = cb.createQuery(entityClass);
+            Root<T> root = cq.from(entityClass);
+            cq.select(root).where(cb.equal(root.get(fieldName), value));
+
+            TypedQuery<T> query = session.createQuery(cq);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
+    }
+
 
     
     
