@@ -1,6 +1,6 @@
 import java.util.List;
 
-import metiers.admin.initSystem.implement.CatalogueImpl;
+import services.admin.initsystem.implement.CatalogueImpl;
 
 public class Main {
     public static void main(String[] args) {
