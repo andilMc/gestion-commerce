@@ -1,5 +1,3 @@
-import java.util.List;
-
 import services.admin.initsystem.implement.CatalogueImpl;
 
 public class Main {
