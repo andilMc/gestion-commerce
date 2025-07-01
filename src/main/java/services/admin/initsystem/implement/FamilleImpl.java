@@ -8,7 +8,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import dao.GenericDAO;
 import jakarta.ejb.Stateless;
+import models.Catalogue;
+import models.Famille;
 import services.admin.initsystem.remote.IFamille;
 import dao.GenericDAO;
 import models.Catalogue;
@@ -16,6 +19,9 @@ import models.Famille;
 
 @Stateless
 public class FamilleImpl implements IFamille {
+	
+	private final GenericDAO<Famille> familleDao = new GenericDAO<>(Famille.class);
+    private final GenericDAO<Catalogue> catalogueDao = new GenericDAO<>(Catalogue.class);
 
     private final GenericDAO<Famille> familleDAO;
     private final GenericDAO<Catalogue> catalogueDAO;
@@ -47,8 +53,10 @@ public class FamilleImpl implements IFamille {
             e.printStackTrace();
             return false;
         }
+
     }
 
+    
     @Override
     public boolean modifierFamille(Famille famille) {
         try {
@@ -76,6 +84,7 @@ public class FamilleImpl implements IFamille {
             e.printStackTrace();
             return false;
         }
+
     }
 
     @Override
@@ -92,6 +101,7 @@ public class FamilleImpl implements IFamille {
             e.printStackTrace();
             return false;
         }
+
     }
 
     @Override
@@ -118,6 +128,7 @@ public class FamilleImpl implements IFamille {
             e.printStackTrace();
             return Collections.emptyList();
         }
+
     }
 
     @Override
@@ -160,4 +171,3 @@ public class FamilleImpl implements IFamille {
         }
     }
 }
- 
