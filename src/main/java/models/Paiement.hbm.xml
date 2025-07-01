@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Paiement" optimistic-lock="none" schema="public" table="paiement">
+    <class catalog="gestion_commerce" name="models.Paiement" optimistic-lock="none" schema="public" table="paiement">
         <id name="idpaiement" type="int">
             <column name="idpaiement"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Facture" fetch="select" name="facture">
+        <many-to-one class="models.Facture" fetch="select" name="facture">
             <column name="idfacture" not-null="true"/>
         </many-to-one>
-        <many-to-one class="models.classes.Modepayement" fetch="select" name="modepayement">
+        <many-to-one class="models.Modepayement" fetch="select" name="modepayement">
             <column name="idmodepayement" not-null="true"/>
         </many-to-one>
         <property name="montantpaye" type="java.lang.Byte">

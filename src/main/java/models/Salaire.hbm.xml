@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Salaire" optimistic-lock="none" schema="public" table="salaire">
+    <class catalog="gestion_commerce" name="models.Salaire" optimistic-lock="none" schema="public" table="salaire">
         <id name="idsalaire" type="int">
             <column name="idsalaire"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Varietesalaire" fetch="select" name="varietesalaire">
+        <many-to-one class="models.Varietesalaire" fetch="select" name="varietesalaire">
             <column name="idvarietesalaire" not-null="true"/>
         </many-to-one>
         <property name="montant" type="java.lang.Byte">
@@ -19,7 +19,7 @@
             <key>
                 <column name="idsalaire" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Contrattravail"/>
+            <one-to-many class="models.Contrattravail"/>
         </set>
     </class>
 </hibernate-mapping>

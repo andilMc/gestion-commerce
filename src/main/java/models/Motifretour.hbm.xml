@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Motifretour" optimistic-lock="none" schema="public" table="motifretour">
+    <class catalog="gestion_commerce" name="models.Motifretour" optimistic-lock="none" schema="public" table="motifretour">
         <id name="idmotif" type="int">
             <column name="idmotif"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Retourproduit" fetch="select" name="retourproduit">
+        <many-to-one class="models.Retourproduit" fetch="select" name="retourproduit">
             <column name="idretoure" not-null="true"/>
         </many-to-one>
         <property name="libelle" type="string">

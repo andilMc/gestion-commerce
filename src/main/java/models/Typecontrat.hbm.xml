@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Typecontrat" optimistic-lock="none" schema="public" table="typecontrat">
+    <class catalog="gestion_commerce" name="models.Typecontrat" optimistic-lock="none" schema="public" table="typecontrat">
         <id name="idtypecontract" type="int">
             <column name="idtypecontract"/>
             <generator class="identity"/>
@@ -19,7 +19,7 @@
             <key>
                 <column name="idtypecontract" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Contrattravail"/>
+            <one-to-many class="models.Contrattravail"/>
         </set>
     </class>
 </hibernate-mapping>

@@ -24,15 +24,21 @@
         
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-tools</artifactId>
-            <version>5.6.15.Final</version>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.0.Final</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.6.0.Final</version>
-        </dependency>        
+            <artifactId>hibernate-hikaricp</artifactId>
+            <version>6.2.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
         <dependency>
             <groupId>jakarta.inject</groupId>

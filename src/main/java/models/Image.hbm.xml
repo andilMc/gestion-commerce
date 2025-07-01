@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Image" optimistic-lock="none" schema="public" table="image">
+    <class catalog="gestion_commerce" name="models.Image" optimistic-lock="none" schema="public" table="image">
         <id name="idimage" type="int">
             <column name="idimage"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Article" fetch="select" name="article">
+        <many-to-one class="models.Article" fetch="select" name="article">
             <column name="idarticle"/>
         </many-to-one>
         <property name="path" type="string">

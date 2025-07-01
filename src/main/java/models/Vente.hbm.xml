@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Vente" optimistic-lock="none" schema="public" table="vente">
+    <class catalog="gestion_commerce" name="models.Vente" optimistic-lock="none" schema="public" table="vente">
         <id name="idvente" type="int">
             <column name="idvente"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Assocomptecaisse" fetch="select" name="assocomptecaisse">
+        <many-to-one class="models.Assocomptecaisse" fetch="select" name="assocomptecaisse">
             <column name="idconnexion" not-null="true"/>
             <column name="idcaisse" not-null="true"/>
         </many-to-one>
-        <many-to-one class="models.classes.Client" fetch="select" name="client">
+        <many-to-one class="models.Client" fetch="select" name="client">
             <column name="idpersonne" not-null="true"/>
             <column name="idclient" not-null="true"/>
         </many-to-one>
@@ -36,25 +36,25 @@
             <key>
                 <column name="idvente" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Livraison"/>
+            <one-to-many class="models.Livraison"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="detailventes" table="detailvente">
             <key>
                 <column name="idvente" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Detailvente"/>
+            <one-to-many class="models.Detailvente"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="factures" table="facture">
             <key>
                 <column name="idvente" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Facture"/>
+            <one-to-many class="models.Facture"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="retourproduits" table="retourproduit">
             <key>
                 <column name="idvente" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Retourproduit"/>
+            <one-to-many class="models.Retourproduit"/>
         </set>
     </class>
 </hibernate-mapping>

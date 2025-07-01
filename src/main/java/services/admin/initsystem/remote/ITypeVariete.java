@@ -2,15 +2,17 @@ package services.admin.initsystem.remote;
 
 import java.util.List;
 
+import models.Typevariete;
+
 public interface ITypeVariete {
-    public boolean ajoutTypeVariete(String label, String typeValeur, boolean etat);
-    public boolean modifierTypeVariete(int idTypeVariete, String label, String typeValeur, boolean etat);
+    public boolean ajoutTypeVariete(String label, String typeValeur, String etat);
+    public boolean modifierTypeVariete(Typevariete typeVariete);
     public boolean supprimerTypeVariete(int idTypeVariete);
     public boolean activerTypeVariete(int idTypeVariete);
     public boolean desactiverTypeVariete(int idTypeVariete);
     public boolean lierTypeVarieteArticle(int idArticle, int idTypeVariete);
     public boolean delierTypeVarieteArticle(int idArticle, int idTypeVariete);
-    public List<List<?>> listerTypeVariete();
-    public List<List<?>> listerTypeVarieteParId(int idTypeVariete);
-    public List<List<?>> listerTypeVarieteParLabel(String label);
+    public List<Typevariete> listerTypeVariete();
+    public Typevariete listerTypeVarieteParId(int idTypeVariete);
+    public List<Typevariete> listerTypeVarieteParLabel(String label);
 }

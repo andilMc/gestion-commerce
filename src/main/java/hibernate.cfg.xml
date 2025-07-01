@@ -9,6 +9,13 @@
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">none</property>
+
+        <!-- Configuration du pool de connexions HikariCP -->
+        <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <property name="hibernate.hikari.maximumPoolSize">20</property> <!-- Nombre maximum de connexions dans le pool -->
+        <property name="hibernate.hikari.idleTimeout">300000</property> <!-- Temps d'inactivité max avant qu'une connexion soit retirée (5 min) -->
+        <property name="hibernate.hikari.connectionTimeout">30000</property> <!-- Timeout pour obtenir une connexion du pool (30 sec) -->
+        <property name="hibernate.hikari.minimumIdle">5</property> <!-- Nombre minimum de connexions inactives à maintenir -->
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         <mapping resource="models/Promotion.hbm.xml"/>

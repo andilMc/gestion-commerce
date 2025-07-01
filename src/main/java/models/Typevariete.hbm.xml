@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Typevariete" optimistic-lock="none" schema="public" table="typevariete">
+    <class catalog="gestion_commerce" name="models.Typevariete" optimistic-lock="none" schema="public" table="typevariete">
         <id name="idtypevariete" type="int">
             <column name="idtypevariete"/>
             <generator class="identity"/>
@@ -22,7 +22,7 @@
             <key>
                 <column name="idtypevariete" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Variete"/>
+            <one-to-many class="models.Variete"/>
         </set>
     </class>
 </hibernate-mapping>

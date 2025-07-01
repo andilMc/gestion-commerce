@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Famille" optimistic-lock="none" schema="public" table="famille">
+    <class catalog="gestion_commerce" name="models.Famille" optimistic-lock="none" schema="public" table="famille">
         <id name="idfamille" type="int">
             <column name="idfamille"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Catalogue" fetch="select" name="catalogue">
+        <many-to-one class="models.Catalogue" fetch="select" name="catalogue">
             <column name="idcatalogue"/>
         </many-to-one>
         <property name="reference" type="string">
@@ -28,7 +28,7 @@
             <key>
                 <column name="idfamille"/>
             </key>
-            <one-to-many class="models.classes.Produit"/>
+            <one-to-many class="models.Produit"/>
         </set>
     </class>
 </hibernate-mapping>
