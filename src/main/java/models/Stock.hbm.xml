@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Stock" optimistic-lock="none" schema="public" table="stock">
+    <class catalog="gestion_commerce" name="models.Stock" optimistic-lock="none" schema="public" table="stock">
         <id name="idstock" type="int">
             <column name="idstock"/>
             <generator class="identity"/>
@@ -25,7 +25,7 @@
             <key>
                 <column name="idstock" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Lot"/>
+            <one-to-many class="models.Lot"/>
         </set>
     </class>
 </hibernate-mapping>

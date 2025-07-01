@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Assoreporttransat" optimistic-lock="none" schema="public" table="assoreporttransat">
-        <composite-id class="models.classes.AssoreporttransatId" name="id">
+    <class catalog="gestion_commerce" name="models.Assoreporttransat" optimistic-lock="none" schema="public" table="assoreporttransat">
+        <composite-id class="models.AssoreporttransatId" name="id">
             <key-property name="idrapport" type="int">
                 <column name="idrapport"/>
             </key-property>
@@ -10,10 +10,10 @@
                 <column name="idtransaction"/>
             </key-property>
         </composite-id>
-        <many-to-one class="models.classes.Rapportfinancier" fetch="select" insert="false" name="rapportfinancier" update="false">
+        <many-to-one class="models.Rapportfinancier" fetch="select" insert="false" name="rapportfinancier" update="false">
             <column name="idrapport" not-null="true"/>
         </many-to-one>
-        <many-to-one class="models.classes.Transaction" fetch="select" insert="false" name="transaction" update="false">
+        <many-to-one class="models.Transaction" fetch="select" insert="false" name="transaction" update="false">
             <column name="idtransaction" not-null="true"/>
         </many-to-one>
         <property name="date" type="date">

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Produit" optimistic-lock="none" schema="public" table="produit">
+    <class catalog="gestion_commerce" name="models.Produit" optimistic-lock="none" schema="public" table="produit">
         <id name="idproduit" type="int">
             <column name="idproduit"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Famille" fetch="select" name="famille">
+        <many-to-one class="models.Famille" fetch="select" name="famille">
             <column name="idfamille"/>
         </many-to-one>
         <property name="reference" type="string">
@@ -28,19 +28,19 @@
             <key>
                 <column name="idproduit"/>
             </key>
-            <one-to-many class="models.classes.Detaiproduit"/>
+            <one-to-many class="models.Detaiproduit"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="assoproduitunites" table="assoproduitunite">
             <key>
                 <column name="idproduit" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Assoproduitunite"/>
+            <one-to-many class="models.Assoproduitunite"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="lots" table="lot">
             <key>
                 <column name="idproduit" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Lot"/>
+            <one-to-many class="models.Lot"/>
         </set>
     </class>
 </hibernate-mapping>

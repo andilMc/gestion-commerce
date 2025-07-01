@@ -11,7 +11,6 @@ public class Connexion {
         try {
             // Charge explicitement depuis le dossier resources
             Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
-
             sessionFactory = configuration.buildSessionFactory();
         } catch (Throwable ex) {
             // Affiche l'erreur complète pour debug

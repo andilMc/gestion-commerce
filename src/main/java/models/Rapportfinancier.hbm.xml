@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Rapportfinancier" optimistic-lock="none" schema="public" table="rapportfinancier">
+    <class catalog="gestion_commerce" name="models.Rapportfinancier" optimistic-lock="none" schema="public" table="rapportfinancier">
         <id name="idrapport" type="int">
             <column name="idrapport"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Compte" fetch="select" name="compte">
+        <many-to-one class="models.Compte" fetch="select" name="compte">
             <column name="idconnexion"/>
         </many-to-one>
         <property name="periode" type="string">
@@ -31,7 +31,7 @@
             <key>
                 <column name="idrapport" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Assoreporttransat"/>
+            <one-to-many class="models.Assoreporttransat"/>
         </set>
     </class>
 </hibernate-mapping>

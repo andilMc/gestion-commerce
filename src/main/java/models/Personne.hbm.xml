@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Personne" optimistic-lock="none" schema="public" table="personne">
+    <class catalog="gestion_commerce" name="models.Personne" optimistic-lock="none" schema="public" table="personne">
         <id name="idpersonne" type="int">
             <column name="idpersonne"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Profile" fetch="select" name="profile">
+        <many-to-one class="models.Profile" fetch="select" name="profile">
             <column name="idprofile" not-null="true"/>
         </many-to-one>
         <property name="nom" type="string">
@@ -43,25 +43,25 @@
             <key>
                 <column name="idpersonne" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Compte"/>
+            <one-to-many class="models.Compte"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="employers" table="employer">
             <key>
                 <column name="idpersonne" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Employer"/>
+            <one-to-many class="models.Employer"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="clients" table="client">
             <key>
                 <column name="idpersonne" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Client"/>
+            <one-to-many class="models.Client"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="collaborateurs" table="collaborateur">
             <key>
                 <column name="idpersonne" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Collaborateur"/>
+            <one-to-many class="models.Collaborateur"/>
         </set>
     </class>
 </hibernate-mapping>

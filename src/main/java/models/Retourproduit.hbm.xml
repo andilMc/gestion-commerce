@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Retourproduit" optimistic-lock="none" schema="public" table="retourproduit">
+    <class catalog="gestion_commerce" name="models.Retourproduit" optimistic-lock="none" schema="public" table="retourproduit">
         <id name="idretoure" type="int">
             <column name="idretoure"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="models.classes.Article" fetch="select" name="article">
+        <many-to-one class="models.Article" fetch="select" name="article">
             <column name="idarticle" not-null="true"/>
         </many-to-one>
-        <many-to-one class="models.classes.Vente" fetch="select" name="vente">
+        <many-to-one class="models.Vente" fetch="select" name="vente">
             <column name="idvente" not-null="true"/>
         </many-to-one>
         <property name="quantiteretournee" type="java.lang.Byte">
@@ -34,7 +34,7 @@
             <key>
                 <column name="idretoure" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Motifretour"/>
+            <one-to-many class="models.Motifretour"/>
         </set>
     </class>
 </hibernate-mapping>

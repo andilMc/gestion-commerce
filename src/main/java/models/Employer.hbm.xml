@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 1, 2025, 7:59:38 PM by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="gestion_commerce" name="models.classes.Employer" optimistic-lock="none" schema="public" table="employer">
-        <composite-id class="models.classes.EmployerId" name="id">
+    <class catalog="gestion_commerce" name="models.Employer" optimistic-lock="none" schema="public" table="employer">
+        <composite-id class="models.EmployerId" name="id">
             <key-property name="idpersonne" type="int">
                 <column name="idpersonne"/>
             </key-property>
@@ -10,13 +10,13 @@
                 <column name="idemployer"/>
             </key-property>
         </composite-id>
-        <many-to-one class="models.classes.Boutique" fetch="select" name="boutique">
+        <many-to-one class="models.Boutique" fetch="select" name="boutique">
             <column name="idboutique"/>
         </many-to-one>
-        <many-to-one class="models.classes.Personne" fetch="select" insert="false" name="personne" update="false">
+        <many-to-one class="models.Personne" fetch="select" insert="false" name="personne" update="false">
             <column name="idpersonne" not-null="true"/>
         </many-to-one>
-        <many-to-one class="models.classes.Poste" fetch="select" name="poste">
+        <many-to-one class="models.Poste" fetch="select" name="poste">
             <column name="idposte" not-null="true"/>
         </many-to-one>
         <property name="matricule" type="string">
@@ -27,21 +27,21 @@
                 <column name="idpersonne" not-null="true"/>
                 <column name="idemployer" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Penalite"/>
+            <one-to-many class="models.Penalite"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="conges" table="conge">
             <key>
                 <column name="idpersonne" not-null="true"/>
                 <column name="idemployer" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Conge"/>
+            <one-to-many class="models.Conge"/>
         </set>
         <set fetch="select" inverse="true" lazy="true" name="contrattravails" table="contrattravail">
             <key>
                 <column name="idpersonne" not-null="true"/>
                 <column name="idemployer" not-null="true"/>
             </key>
-            <one-to-many class="models.classes.Contrattravail"/>
+            <one-to-many class="models.Contrattravail"/>
         </set>
     </class>
 </hibernate-mapping>
